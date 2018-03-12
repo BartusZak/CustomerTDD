@@ -4,10 +4,15 @@ namespace CustomerTDD
 {
     public class CustomerValidator
     {
+        private const int MinimumAge = 18;
+
         public bool Validate(ICustomer customer)
         {
             if (customer == null) throw new ArgumentNullException(nameof(customer));
-            return false;
+
+            if (customer.GetAge() < MinimumAge) return false;
+            return true;
         }
     }
 }
+  
