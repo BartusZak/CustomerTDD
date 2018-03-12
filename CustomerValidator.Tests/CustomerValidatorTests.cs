@@ -15,5 +15,16 @@ namespace CustomerValidator.Tests
 
             action.Should().Throw<ArgumentNullException>();
         }
+
+        [Fact]
+        public void WhenCustomerHasAgeLessThan18_ThenValidationFails()
+        {
+            var validator = new CustomerTDD.CustomerValidator();
+            var customer = new CustomerTDD.CustomerMock(expectedAge: 16);
+
+            bool validate = validator.Validate(customer);
+
+            validate.Should().BeFalse();
+        }
     }
 }
