@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomerTDD
 {
-    internal public class CustomerMock : ICustomer
+    public class CustomerMock : ICustomer
     {
         private readonly int _expectedAge;
 

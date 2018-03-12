@@ -7,7 +7,7 @@ namespace CustomerTDD
         public bool Validate(ICustomer customer)
         {
             if (customer == null) throw new ArgumentNullException(nameof(customer));
-            throw new NotImplementedException();
+            return false;
         }
     }
 }
